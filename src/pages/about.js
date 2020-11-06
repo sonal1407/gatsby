@@ -6,21 +6,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImagePage from "../components/shared/backgroundImage"
 
-const IndexPage = (data) => (
-  <Layout>
-    <SEO title="Home" />
-    <BackgroundImagePage
-      img={data.data.img.childImageSharp.fluid}
-      title={'Gatsby'}
-    ></BackgroundImagePage>
-
-    <Info></Info>
-  </Layout>
+const About = (data) => (
+    <Layout>
+        <SEO title="Home" />
+        <BackgroundImagePage
+            img={data.data.img.childImageSharp.fluid}
+            title={'About us'}
+        ></BackgroundImagePage>
+        <Info></Info>
+    </Layout>
 )
 // clling the details for
 // get the file to load
 export const query = graphql`{
-  img:file(relativePath:{eq:"backgroundImage.jpg"}){ 
+  img:file(relativePath:{eq:"aboutus.jpeg"}){ 
     childImageSharp{
       fluid{
         ...GatsbyImageSharpFluid_tracedSVG
@@ -30,4 +29,4 @@ export const query = graphql`{
 }`
 
 
-export default IndexPage
+export default About
