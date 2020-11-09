@@ -17,3 +17,5 @@ export default function BackgroundImagePage({
         </div>
     )
 }
+
+// ShoppingItem
