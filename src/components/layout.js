@@ -7,14 +7,11 @@ import Footer from "./shared/footer"
 
 
 const Layout = ({ children }) => {
-
-  return (
-    <>
-      <Navbar />
-      {children}
-      <Footer></Footer>
-    </>
-  )
+  return (<>
+    <Navbar />
+    {children}
+    <Footer></Footer>
+  </>)
 }
 
 Layout.propTypes = {
@@ -22,3 +19,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+// npm install react-bootstrap bootstrap

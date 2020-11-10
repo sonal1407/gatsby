@@ -16,25 +16,17 @@ export default class Navbar extends Component {
                 path: '/about',
                 text: 'About'
             },
-            {
-                id: 3,
-                path: '/contact',
-                text: 'Cart'
-            }
         ]
     }
-    onNavbarClick = () => {
-        console.log('onNavbarClick');
-    }
+
     render() {
         return (
             <nav class="navbar navbar-default">
                 <Link to="/">
                     <img className="img" src={gatsbyicon} alt="logo"></img>
                 </Link>
-                {/* <button onClick={this.onNavbarClick}>Toggle </button> */}
                 <div>
-                    <ul class="nav navbar-nav">
+                    <ul>
                         {
                             this.state.links.map((list) => {
                                 return (

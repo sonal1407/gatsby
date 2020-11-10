@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
 import Info from "../components/Home/info"
+import Menu from "../components/Home/Menu"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -14,7 +15,8 @@ const IndexPage = (data) => (
       title={'Gatsby'}
     ></BackgroundImagePage>
 
-    <Info></Info>
+    <Info />
+    <Menu dataMenu={data.data.menu}/>
   </Layout>
 )
 // clling the details for
@@ -24,6 +26,24 @@ export const query = graphql`{
     childImageSharp{
       fluid{
         ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+  menu: allContentfulShoppingItem {
+    edges {
+      node {
+        id
+        title
+        category
+        description {
+          description
+        }
+        price
+        image {
+          fixed(height:50,width:50){
+            ...GatsbyContentfulFixed_tracedSVG
+          }
+        }
       }
     }
   }

@@ -124,7 +124,8 @@ sup {
 
 /* style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
  */
-
+ .searchResult, .optionText { overflow: hidden }
+ .resultIcon { float: left; margin-right: 10px;padding: 15px; }
  img{
   border: 1px solid #ddd;
     border-radius: 4px;
