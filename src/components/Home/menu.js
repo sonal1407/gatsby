@@ -12,8 +12,10 @@ export default class Menu extends Component {
             categories: this.getCategory(props.dataMenu.edges)
         }
     }
-    getCategory = (items) => {
-        let checkCategory = items.map((item) => {
+
+    getCategory = (category) => {
+
+        let checkCategory = category.map((item) => {
             return item.node.category
         })
         let setCategory = new Set(checkCategory);
@@ -22,12 +24,12 @@ export default class Menu extends Component {
     }
 
     renderButton = (category) => {
-        let item = this.state.items;
+        let allItems = this.state.items;
         if (category === 'all') {
-            this.setState({ shoppingItems: item })
+            this.setState({ shoppingItems: allItems })
         }
         else {
-            let filterItem = item.filter((node) => node.node.category === category)
+            let filterItem = allItems.filter((node) => node.node.category === category)
             this.setState({ shoppingItems: filterItem })
         }
     }
@@ -44,9 +46,9 @@ export default class Menu extends Component {
                             })}
                             </div>
                         </Row>
-                        <Row style={{ display: 'flex', justifyContent: 'center' }}>
+                        {/* <Row style={{ display: 'flex', justifyContent: 'center' }}>
                             <h1> Our items</h1>
-                        </Row>
+                        </Row> */}
                     </Container>
                     {this.state.shoppingItems.map((item) => {
                         return <div id="" className="searchResult">
