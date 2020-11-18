@@ -7,14 +7,15 @@ import SEO from "../components/seo"
 import BackgroundImagePage from "../components/shared/backgroundImage"
 
 const About = (data) => (
-    <Layout>
-        <SEO title="Home" />
-        <BackgroundImagePage
-            img={data.data.img.childImageSharp.fluid}
-            title={'About us'}
-        ></BackgroundImagePage>
-        <Info></Info>
-    </Layout>
+  <Layout>
+    <SEO title="Home" />
+    <BackgroundImagePage
+      img={data.data.img.childImageSharp.fluid}
+      title={'About us'}
+    ></BackgroundImagePage>
+    <Info title="Home" route="/"></Info>
+
+  </Layout>
 )
 // clling the details for
 // get the file to load

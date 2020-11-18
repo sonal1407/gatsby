@@ -1,0 +1,39 @@
+import { graphql, StaticQuery } from 'gatsby'
+import React, { Component } from 'react'
+import { Container } from 'react-bootstrap'
+import Product from './product'
+import Title from './Title'
+
+export default class Products extends Component {
+  render() {
+    return <StaticQuery query={graphql`{product: allContentfulProduct {
+        edges {
+          node {
+            id
+            title
+            price
+            image {
+              fluid(maxHeight:426){
+                  src
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
+          }
+        }
+      }}`} render={data => {
+        return (<section>
+          <Container>
+            <Title title="Our Products"></Title>
+            <div className="row h-100">
+              {data.product.edges.map(({ node: product }) => {
+                return <Product key={product.id} product={product}></Product>
+              })}
+            </div>
+
+          </Container>
+        </section>
+        )
+      }}></StaticQuery>
+
+  }
+}

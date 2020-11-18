@@ -46,22 +46,26 @@ export default class Menu extends Component {
                             })}
                             </div>
                         </Row>
-                        {/* <Row style={{ display: 'flex', justifyContent: 'center' }}>
-                            <h1> Our items</h1>
-                        </Row> */}
+
                     </Container>
-                    {this.state.shoppingItems.map((item) => {
-                        return <div id="" className="searchResult">
-                            <div className="resultIcon">
-                                <Image fixed={item.node.image.fixed} />
-                            </div>
-                            <div className="optionText">
-                                <div>{item.node.title} </div>
-                                <div>{item.node.description.description} </div>
-                                <div>{item.node.price} </div>
-                            </div>
-                        </div>
-                    })}
+                    <div className="row">
+                        {this.state.shoppingItems.map((item) => {
+                            return (
+                                <div className="col-6">
+                                    <div className="media" style={{background:"#5c656d26"}}>
+                                        <Image fixed={item.node.image.fixed} />
+                                        <div className="media-body">
+                                            <div className="d-flex justify-content-between">
+                                                <h5 className="mt-0">{item.node.title}</h5>
+                                            </div>
+                                            <div>${item.node.price}</div>
+                                            <p>{item.node.description.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             )
         } else {

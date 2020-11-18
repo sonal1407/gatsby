@@ -7,11 +7,12 @@ export default function BackgroundImagePage({
     return (
         <div  >
             <BackgroundImage
+                className="vh-100 d-flex align-items-center justify-content-center"
                 Tag={`section`}
                 id={`media-test`}
                 fluid={img}
             >
-                <h1 style={{height:'200px',textAlign:'center'}}>{title}</h1>
+                <h1 className="m-0">{title}</h1>
                 {children}
             </BackgroundImage>
         </div>

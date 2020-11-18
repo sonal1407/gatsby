@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   return (<>
     <Navbar />
     {children}
-    <Footer></Footer>
+    {/* <Footer></Footer> */}
   </>)
 }
 

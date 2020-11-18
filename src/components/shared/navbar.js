@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "gatsby"
 import "../layout.css";
-
 import gatsbyicon from "../../images/gatsby-icon.png";
 export default class Navbar extends Component {
     state = {
@@ -17,18 +16,18 @@ export default class Navbar extends Component {
                 path: '/about',
                 text: 'About'
             },
-            {
-                id: 3,
-                path: '/contact',
-                text: 'Contact'
-            },
+            // {
+            //     id: 3,
+            //     path: '/contact',
+            //     text: 'Contact'
+            // },
 
         ]
     }
 
     render() {
         return (
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default justify-content-between align-items-center">
                 <Link to="/">
                     <img className="img" src={gatsbyicon} alt="logo"></img>
                 </Link>
@@ -41,13 +40,9 @@ export default class Navbar extends Component {
                                 )
                             })
                         }
-                        <li>
-                            <div className="snipcart-checkout">
-                                Cart
-                            </div>
-                        </li>
                     </ul>
                 </div>
+                <button className="snipcart-checkout">Cart</button>
             </nav>
         )
     }

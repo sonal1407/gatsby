@@ -1,7 +1,9 @@
 import { graphql } from "gatsby"
 import React from "react"
+import { Carousel } from "react-bootstrap"
 import Info from "../components/Home/info"
 import Menu from "../components/Home/Menu"
+import Products from "../components/Home/products"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,11 +14,12 @@ const IndexPage = (data) => (
     <SEO title="Home" />
     <BackgroundImagePage
       img={data.data.img.childImageSharp.fluid}
-      title={'Gatsby'}
+      title={'Gatsby.js example'}
     ></BackgroundImagePage>
+     <Info title="About us" route="/about" />
+    <Menu dataMenu={data.data.menu} />
 
-    <Info />
-    <Menu dataMenu={data.data.menu}/>
+    <Products></Products>
   </Layout>
 )
 // clling the details for
@@ -48,6 +51,5 @@ export const query = graphql`{
     }
   }
 }`
-
 
 export default IndexPage

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'gatsby'
-
 import Title from './Title'
 
-export default function Info() {
+const Info = (props) => {
     return (
         <Container >
             <Title title="our services" ></Title>
@@ -17,10 +16,11 @@ export default function Info() {
                     It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                     and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                </p>
-                <Link to="/about" style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Button>About</Button>
+                <Link to={props.route} style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Button>{props.title}</Button>
                 </Link>
             </div>
         </Container>
     )
 }
+export default Info;
