@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import Title from '../components/Home/Title'
 
-export default function Contact() {
+ const Contact =()=> {
     return (
         <div>
             <Title title={'Contact us'}></Title>
@@ -22,3 +22,4 @@ export default function Contact() {
         </div>
     )
 }
+export default Contact;

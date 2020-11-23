@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Product from './product'
 import Title from './Title'
 
-export default class Products extends Component {
-  render() {
+ const Products =()=> {
+ 
     return <StaticQuery query={graphql`{product: allContentfulProduct {
         edges {
           node {
@@ -29,11 +29,9 @@ export default class Products extends Component {
                 return <Product key={product.id} product={product}></Product>
               })}
             </div>
-
           </Container>
         </section>
         )
       }}></StaticQuery>
-
-  }
 }
+export default Products;

@@ -3,7 +3,7 @@ import Title from './Title'
 import Image from 'gatsby-image'
 import { Button, Row, Container } from 'react-bootstrap';
 
-export default class Menu extends Component {
+export default class Menu extends Component<any,any> {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,7 +39,7 @@ export default class Menu extends Component {
             return (
                 <div>
                     <Container >
-                        <Title title="Menu items"></Title>
+                        <Title title="Menu Items"></Title>
                         <Row style={{ display: 'flex', justifyContent: 'center' }}>
                             <div >{this.state.categories.map((category, index) => {
                                 return (<Button style={{ margin: '10px' }} variant="outline-info" key={index} onClick={() => this.renderButton(category)}>{category}</Button>)
@@ -52,7 +52,7 @@ export default class Menu extends Component {
                         {this.state.shoppingItems.map((item) => {
                             return (
                                 <div className="col-6">
-                                    <div className="media" style={{background:"#5c656d26"}}>
+                                    <div className="media">
                                         <Image fixed={item.node.image.fixed} />
                                         <div className="media-body">
                                             <div className="d-flex justify-content-between">

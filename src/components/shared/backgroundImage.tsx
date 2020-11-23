@@ -1,20 +1,19 @@
 import React from 'react'
 import BackgroundImage from "gatsby-background-image";
 
-export default function BackgroundImagePage({
-    img, title, children
-}) {
+const BackgroundImagePage = (props) => {
     return (
         <div  >
             <BackgroundImage
                 className="vh-100 d-flex align-items-center justify-content-center"
                 Tag={`section`}
                 id={`media-test`}
-                fluid={img}
+                fluid={props.img}
             >
-                <h1 className="m-0">{title}</h1>
-                {children}
+                <h1 className="m-0">{props.title}</h1>
+                {props.children}
             </BackgroundImage>
         </div>
     )
 }
+export default BackgroundImagePage;
