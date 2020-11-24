@@ -1,10 +1,10 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import Title from '../components/Home/Title'
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import Title from '../components/Home/Title';
 
  const Contact =()=> {
     return (
-        <div>
+        <div style={{textAlign: "center",background:" rgba(0,0,0,.075)"}}>
             <Title title={'Contact us'}></Title>
             <form>
                 <br></br>

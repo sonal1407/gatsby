@@ -21,27 +21,19 @@ export default class Navbar extends Component {
             //     path: '/contact',
             //     text: 'Contact'
             // },
-
         ]
     }
 
     render() {
         return (
-            <nav class="navbar navbar-default justify-content-between align-items-center">
+            <nav className="navbar navbar-default justify-content-between align-items-center">
                 <Link to="/">
                     <img className="img" src={gatsbyicon} alt="logo"></img>
                 </Link>
-                <div>
-                    <ul>
-                        {
-                            this.state.links.map((list) => {
-                                return (
-                                    <li><Link to={list.path}>{list.text}</Link></li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
+                <ul>{this.state.links.map((list) => {
+                        return (<li><Link to={list.path}>{list.text}</Link></li>)
+                    })}
+                </ul>
                 <button className="snipcart-checkout">Cart</button>
             </nav>
         )

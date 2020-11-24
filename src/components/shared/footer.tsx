@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Footer() {
+const Footer = () => {
     return (
         <div style={{
             background: '#333', position: 'fixed',
@@ -14,3 +14,4 @@ export default function Footer() {
         </div>
     )
 }
+export default Footer;

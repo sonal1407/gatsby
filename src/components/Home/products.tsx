@@ -1,5 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby'
-import React, { Component } from 'react'
+import React from 'react'
 import { Container } from 'react-bootstrap'
 import Product from './product'
 import Title from './Title'

@@ -1,12 +1,13 @@
-import { graphql } from "gatsby"
-import React from "react"
-import Info from "../components/Home/info"
-import Menu from "../components/Home/Menu"
-import Products from "../components/Home/products"
+import { graphql } from "gatsby";
+import React from "react";
+import Info from "../components/Home/info";
+import Menu from "../components/Home/Menu";
+import Products from "../components/Home/products";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import BackgroundImagePage from "../components/shared/backgroundImage"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import BackgroundImagePage from "../components/shared/backgroundImage";
+import Contact from "./contact";
 
 const IndexPage = (data) => (
   <Layout>
@@ -18,6 +19,7 @@ const IndexPage = (data) => (
      <Info title="About us" route="/about" />
     <Menu dataMenu={data.data.menu} />
     <Products></Products>
+    <Contact></Contact>
   </Layout>
 )
 // clling the details for
